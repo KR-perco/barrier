@@ -1,0 +1,1 @@
+<? $square3Price = '905'; $square43Price = '920'; $round3Price = '874'; $round43Price = '886'; $square3PriceRubles = '78 335'; $square43PriceRubles = '79 633'; $round3PriceRubles = '75 652'; $round43PriceRubles = '76 690';
