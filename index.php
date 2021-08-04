@@ -1,29 +1,15 @@
 <?php
 
-if (!function_exists("console_log")) { 
-	function console_log($data)
-	{
-		echo '<script>';
-		echo 'console.log(' . json_encode($data) . ')';
-		echo '</script>';
-	}
-}
-if (empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === 'off') {
-	$location = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-	header('HTTP/1.1 301 Moved Permanently');
-	header('Location: ' . $location);
-	exit;
-}
-if (substr($_SERVER['HTTP_HOST'], 0, 4) === 'www.') {
-	header('HTTP/1.1 301 Moved Permanently');
-    header('Location: ' . 'https://' . substr($_SERVER['HTTP_HOST'], 4) . $_SERVER['REQUEST_URI']);
-    exit;
-}
+include 'secret.php';
+
+console_log("git integreted"); 
+
 if ($_POST['form'] == 'feedback') {
 	if($request = curl_init()) {
 		curl_setopt($request, CURLOPT_URL, 'https://www.google.com/recaptcha/api/siteverify');
 		curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($request, CURLOPT_POST, true); 
+		curl_setopt($request, CURLOPT_POST, true);
+		curl_setopt($request, CURLOPT_POSTFIELDS, 'secret='.$secretkey.'&response=' . $_POST['g-recaptcha-response']);
 		$response = curl_exec($request);
 		curl_close($request);
 		$responseDecoded = json_decode($response);
@@ -36,7 +22,8 @@ if ($_POST['form'] == 'feedback') {
 		mail('gerasimov@perco.ru', 'Заполнена форма обратной связи на сайте barrier.perco.ru', $message, $headers);
 		mail('romanova@perco.ru', 'Заполнена форма обратной связи на сайте barrier.perco.ru', $message, $headers);
 		// mail('klimov@perco.ru', 'Заполнена форма обратной связи на сайте barrier.perco.ru', $message, $headers);
-		$params = array( 
+		$params = array(
+			'pw' => $secretpw,
 			'name' => htmlspecialchars($_POST['name']),
 			'email' => htmlspecialchars($_POST['email']),
 			'number' => htmlspecialchars($_POST['number']),
@@ -734,7 +721,29 @@ include 'db/prices.php';
 			<section class="optional-block">
 				<h2 class="optional-block__title container">Дополнительное оборудование</h2>
 				<div class="optional-block__photos container">
-					<div class="optional-block__photos-inner">
+					<div class="optional-block__photos-inner"> 
+						<div class="optional-block-photo">
+							<div class="optional-block-photo__photo">
+								<img class="optional-block-photo__img" src="img/code-modul.png" alt="Модуль GSM/BLE для управления шлагбаумом " title="Кодовая панель" loading="lazy">
+							</div>
+							<div class="optional-block-photo__text optional-block-photo__text_title">
+								Модуль GSM/BLE для управления шлагбаумом
+							</div>
+							<!-- <div class="optional-block-photo__text optional-block-photo__text_price">
+								Цена <span class="optional-block-photo__price-value">15 866 ₽</span> со склада в Москве и Санкт&#8209;Петербурге
+							</div>
+							<div class="optional-block-photo__text optional-block-photo__text_price">
+								36 € (по курсу ЦБ РФ на 04.09.20)
+							</div> -->
+							<div class="optional-block-photo__description" data-state="closed">
+								<button class="optional-block-photo__description-close" aria-label="Закрыть">
+									<img class="optional-block-photo__description-close-img" src="img/close-grey.svg" alt="Закрыть" loading="lazy">
+								</button>
+								<h3 class="optional-block-photo__description-title">Модуль GSM/BLE для управления шлагбаумом </h3>
+								<p class="optional-block-photo__description-paragraph">Модуль предназначается для управления шлагбаумом с смартфона – посредством сотовой связи GSM и технологии Bluetooth. </p>
+								<p class="optional-block-photo__description-paragraph">Модуль представляет собой плату беспроводной передачи данных, подключаемую к блоку управления шлагбаума PERCo-GS04 через интерфейс UART-BLE </p>
+							</div>
+						</div>
 						<div class="optional-block-photo">
 							<div class="optional-block-photo__photo">
 								<img class="optional-block-photo__img" src="img/gbs1.png" alt="Опорная стойка стрелы шлагбаума GBS1" title="Опорная стойка" loading="lazy">
@@ -1094,29 +1103,6 @@ include 'db/prices.php';
 									<li class="optional-block-photo__description-list-li">Диапазон рабочих температур – -40℃~＋60℃</li>
 									<li class="optional-block-photo__description-list-li">Габаритные размеры – 130х56х23 мм</li>
 								</ul>
-							</div>
-						</div>
-						
-						<div class="optional-block-photo">
-							<div class="optional-block-photo__photo">
-								<img class="optional-block-photo__img" src="img/code-modul.png" alt="Модуль GSM/BLE для управления шлагбаумом " title="Кодовая панель" loading="lazy">
-							</div>
-							<div class="optional-block-photo__text optional-block-photo__text_title">
-								Модуль GSM/BLE для управления шлагбаумом
-							</div>
-							<!-- <div class="optional-block-photo__text optional-block-photo__text_price">
-								Цена <span class="optional-block-photo__price-value">15 866 ₽</span> со склада в Москве и Санкт&#8209;Петербурге
-							</div>
-							<div class="optional-block-photo__text optional-block-photo__text_price">
-								36 € (по курсу ЦБ РФ на 04.09.20)
-							</div> -->
-							<div class="optional-block-photo__description" data-state="closed">
-								<button class="optional-block-photo__description-close" aria-label="Закрыть">
-									<img class="optional-block-photo__description-close-img" src="img/close-grey.svg" alt="Закрыть" loading="lazy">
-								</button>
-								<h3 class="optional-block-photo__description-title">Модуль GSM/BLE для управления шлагбаумом </h3>
-								<p class="optional-block-photo__description-paragraph">Модуль предназначается для управления шлагбаумом с смартфона – посредством сотовой связи GSM и технологии Bluetooth. </p>
-								<p class="optional-block-photo__description-paragraph">Модуль представляет собой плату беспроводной передачи данных, подключаемую к блоку управления шлагбаума PERCo-GS04 через интерфейс UART-BLE </p>
 							</div>
 						</div>
 					</div>
@@ -1508,7 +1494,7 @@ include 'db/prices.php';
 					<a class="file" href="download/GS04_TechSpec.pdf" target="_blank">
 						<img class="file__icon" src="img/pdf.svg" alt="pdf" loading="lazy" draggable="false">
 						<h3 class="file__title">Шлагбаум PERCo-GS04. <br class="file__br">Краткое техническое описание</h3>
-						<div class="file__description">(1.16 MB) &mdash; 02.11.2020</div>
+						<div class="file__description">(1.17 MB) &mdash; 04.08.2021</div> 
 					</a>
 					<a class="file" href="download/AutoCAD.WMD-06-connection_dwg.zip" target="_blank">
 						<img class="file__icon" src="img/dwg.svg" alt="pdf" loading="lazy" draggable="false">
