@@ -1442,6 +1442,15 @@ include 'db/prices.php';
 								циклов
 							</div>
 						</div>
+						
+						<div class="characteristics-icon">
+							<div class="characteristics-icon__icon">
+								<img class="characteristics-icon__img characteristics-icon__img_cycles" src="img/power-consumption.svg" alt="не более 175 Вт" loading="lazy" draggable="false">
+							</div>
+							<div class="characteristics-icon__title">
+								максимальная потребляемая мощность
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="characteristics-block__bottom">
@@ -1489,7 +1498,7 @@ include 'db/prices.php';
 					<a class="file" href="download/GS04_ApplicGuide.pdf" target="_blank">
 						<img class="file__icon" src="img/pdf.svg" alt="pdf" loading="lazy" draggable="false">
 						<h3 class="file__title">Шлагбаум PERCo-GS04. <br class="file__br">Руководство по эксплуатации</h3>
-						<div class="file__description">(4.11 MB) &mdash; 09.11.2020</div>
+						<div class="file__description">(4.55 MB) &mdash; 24.08.2021</div>
 					</a>
 					<a class="file" href="download/GS04_TechSpec.pdf" target="_blank">
 						<img class="file__icon" src="img/pdf.svg" alt="pdf" loading="lazy" draggable="false">
@@ -1526,7 +1535,21 @@ include 'db/prices.php';
 						<h3 class="file__title">Паспорт и руководство пользователя <br class="file__br">GSM / BLE модуль управления шлагбаумом PERCo-GCM1 </h3>
 						<div class="file__description">(2.87 MB) &mdash; 03.08.2021</div>
 					</a>
-					
+					<a class="file" href="download/M1H_ApplicGuide.pdf" target="_blank">
+						<img class="file__icon" src="img/pdf.svg" alt="pdf" loading="lazy" draggable="false">
+						<h3 class="file__title">Датчик индукционной петли М1Н. <br class="file__br">Инструкция по использованию. </h3>
+						<div class="file__description">(444 kB) &mdash; 20.08.2021</div>
+					</a>  
+					<a class="file" href="download/template-for-stickers-GBO3.0.pdf" target="_blank">
+						<img class="file__icon" src="img/pdf.svg" alt="pdf" loading="lazy" draggable="false">
+						<h3 class="file__title">Шаблон для наклейки светоотражающих элементов на стрелу GBO3.0 </h3>
+						<div class="file__description">(297 kB) &mdash; 24.08.2021</div>
+					</a>  
+					<a class="file" href="download/template-for-stickers-GBO4.3.pdf" target="_blank">
+						<img class="file__icon" src="img/pdf.svg" alt="pdf" loading="lazy" draggable="false">
+						<h3 class="file__title">Шаблон для наклейки светоотражающих элементов на стрелу GBO4.3</h3>
+						<div class="file__description">(299 kB) &mdash; 24.08.2021</div>
+					</a>  
 		
 					<script type="application/ld+json">
 						{
