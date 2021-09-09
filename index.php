@@ -2,8 +2,6 @@
 
 include 'secret.php';
 
-console_log("git integreted"); 
-
 if ($_POST['form'] == 'feedback') {
 	if($request = curl_init()) {
 		curl_setopt($request, CURLOPT_URL, 'https://www.google.com/recaptcha/api/siteverify');
@@ -94,7 +92,8 @@ include 'db/prices.php';
 		<meta property="og:image" content="https://barrier.perco.ru/img/preview.jpg">
 		<meta property="og:image:width" content="1920">
 		<meta property="og:image:height" content="1080">
-		<link href="css/main.css" rel="stylesheet">
+		<link href="css/swiper.css" rel="stylesheet">
+		<link href="css/main.css?v=3" rel="stylesheet">
 		<link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon">
 		<link href="https://barrier.perco.ru" rel="canonical">
 		<script type="application/ld+json">
@@ -155,7 +154,8 @@ include 'db/prices.php';
 			const round3PriceRubles =  '<?= $round3PriceRubles; ?>';
 			const round43PriceRubles =  '<?= $round43PriceRubles; ?>';
 		</script>
-		<script src="js/main.js" async defer></script>
+		<script src="js/swiper.min.js"></script>
+		<script src="js/main.js" async defer></script> 
 	</head>
 	<body>
 		<div class="preloader">
@@ -548,6 +548,22 @@ include 'db/prices.php';
 						</div>
 					</div>
 				</div>
+			</section>
+			<section class="new-gallery">  
+				<div class="gallery-new container swiper"> 
+					<div class="swiper-wrapper"> 
+						<div class="swiper-slide"><img src="img/gallery/1.jpg" alt=""></div>
+						<div class="swiper-slide"><img src="img/gallery/2.jpg" alt=""></div>
+						<div class="swiper-slide"><img src="img/gallery/3.jpg" alt=""></div>
+						<div class="swiper-slide"><img src="img/gallery/4.jpg" alt=""></div>
+						<div class="swiper-slide"><img src="img/gallery/5.jpg" alt=""></div>
+						<div class="swiper-slide"><img src="img/gallery/6.jpg" alt=""></div>
+						<div class="swiper-slide"><img src="img/gallery/7.jpg" alt=""></div>
+						<div class="swiper-slide"><img src="img/gallery/8.jpg" alt=""></div>
+					</div>  
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div> 
+				</div> 
 			</section>
 			<section class="set-block">
 				<h2 class="set-block__title container">Комплект</h2>

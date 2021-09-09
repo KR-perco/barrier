@@ -1752,4 +1752,28 @@
             }
         });
     };
+
+    var swiper = new Swiper(".gallery-new", {
+        effect: "fade",
+        loop: true,
+        speed: 1300,
+        fadeEffect: {
+            crossFade: false
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: '.gallery-new .swiper-button-next',
+            prevEl: '.gallery-new .swiper-button-prev',
+        },
+        // on: {
+        //     slideChange: function(swiper) {
+        //         // let dynamicText = document.getElementById("js-dynamic-text-1");
+        //         let dynamicSubtext = document.getElementById("js-dynamic-subtext-1");
+        //         dynamicSubtext.innerHTML = swiper.slides[swiper.activeIndex].dataset.subtext;
+        //     }
+        // },
+    });
 })();
