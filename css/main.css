@@ -1867,21 +1867,35 @@ body {
 
 .gallery-new {
     position: relative;
-    max-width: 1225px;
+    width: 100%;
+}
+
+.new-gallery .swiper-slide {
+    position: relative;
+}
+
+.new-gallery label {
+    position: absolute;
+    color: white;
+    bottom: 27px;
+    right: 70px;
+    font-weight: 700;
+    font-size: 30px;
 }
 
 .swiper-button-next,
 .swiper-button-prev {
     width: 100px;
     height: auto;
+    margin-top: -50px;
 }
 
 .swiper-button-next {
-    right: -110px;
+    right: 35px;
 }
 
 .swiper-button-prev {
-    left: -110px;
+    left: 35px;
 }
 
 .swiper-button-prev:after,
@@ -1900,6 +1914,25 @@ body {
     transform: scale(-1);
 }
 
+.swiper-slide picture {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+.swiper-slide picture img {
+    width: 100%;
+    max-width: 100%;
+    vertical-align: top;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+/* 
+.swiper-slide picture,
 .swiper-slide img {
     height: 100%;
     vertical-align: top;
@@ -1908,7 +1941,7 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
+} */
 
 @media (min-width: 340px) {
     .preloader {
@@ -2899,10 +2932,10 @@ body {
         height: 75px;
     }
     .swiper-button-next {
-        right: 10px;
+        right: 0px;
     }
     .swiper-button-prev {
-        left: 10px;
+        left: 0px;
     }
     .container.gallery-new {
         inline-size: 100%;
@@ -2910,6 +2943,14 @@ body {
     .swiper-slide img {
         width: 100%;
         height: auto;
+    }
+    .new-gallery label {
+        font-size: 16px;
+        display: block;
+        width: 100%;
+        bottom: 0;
+        right: 0;
+        padding: 15px 25px;
     }
 }
 

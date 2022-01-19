@@ -550,16 +550,88 @@ include 'db/prices.php';
 				</div>
 			</section>
 			<section class="new-gallery">  
-				<div class="gallery-new container swiper"> 
+				<div class="gallery-new swiper"> 
 					<div class="swiper-wrapper"> 
-						<div class="swiper-slide"><img src="img/gallery/1.jpg" alt=""></div>
-						<div class="swiper-slide"><img src="img/gallery/2.jpg" alt=""></div>
-						<div class="swiper-slide"><img src="img/gallery/3.jpg" alt=""></div>
-						<div class="swiper-slide"><img src="img/gallery/4.jpg" alt=""></div>
-						<div class="swiper-slide"><img src="img/gallery/5.jpg" alt=""></div>
-						<div class="swiper-slide"><img src="img/gallery/6.jpg" alt=""></div>
-						<div class="swiper-slide"><img src="img/gallery/7.jpg" alt=""></div>
-						<div class="swiper-slide"><img src="img/gallery/8.jpg" alt=""></div>
+						<div class="swiper-slide"> 
+							<picture class="swiper-lazy">
+								<source media="(max-width: 1224px)" srcset="img/gallery/1.jpg" loading="lazy">
+								<source media="(min-width: 1224px)" srcset="img/gallery/1225px/1.jpg" loading="lazy">
+								<source media="(max-width: 415px)" srcset="img/gallery/415px/1.jpg" loading="lazy">
+								<img src="img/gallery/1225px/1.jpg" alt="Шлагбаум GS04, парковка PERCo, Санкт-Петербург" loading="lazy">
+							</picture>  
+							<label>Парковка PERCo, Санкт-Петербург</label>
+							<div class="swiper-lazy-preloader"></div>
+						</div>
+						<div class="swiper-slide">
+							<picture class="swiper-lazy">
+								<source media="(max-width: 1224px)" srcset="img/gallery/2.jpg" loading="lazy">
+								<source media="(min-width: 1224px)" srcset="img/gallery/1225px/2.jpg" loading="lazy">
+								<source media="(max-width: 415px)" srcset="img/gallery/415px/1.jpg" loading="lazy">
+								<img src="img/gallery/1225px/2.jpg" alt="Шлагбаум GS04, парковка PERCo, Псков" loading="lazy">
+							</picture> 
+							<label>Парковка PERCo, Псков</label>
+							<div class="swiper-lazy-preloader"></div>
+						</div>
+						<div class="swiper-slide">
+							<picture class="swiper-lazy">
+								<source media="(max-width: 1224px)" srcset="img/gallery/3.jpg" loading="lazy">
+								<source media="(min-width: 1224px)" srcset="img/gallery/1225px/3.jpg" loading="lazy">
+								<source media="(max-width: 415px)" srcset="img/gallery/415px/1.jpg" loading="lazy">
+								<img src="img/gallery/1225px/3.jpg" alt="Шлагбаум GS04, паркинг PERCo, Санкт-Петербург" loading="lazy">
+							</picture> 
+							<label>Паркинг PERCo, Санкт-Петербург</label>
+							<div class="swiper-lazy-preloader"></div>
+						</div>
+						<div class="swiper-slide">
+							<picture class="swiper-lazy">
+								<source media="(max-width: 1224px)" srcset="img/gallery/4.jpg" loading="lazy">
+								<source media="(min-width: 1224px)" srcset="img/gallery/1225px/4.jpg" loading="lazy">
+								<source media="(max-width: 415px)" srcset="img/gallery/415px/1.jpg" loading="lazy">
+								<img src="img/gallery/1225px/4.jpg" alt="Шлагбаум GS04, парковка, Санкт-Петербург" loading="lazy">
+							</picture> 
+							<label>Парковка, Санкт-Петербург</label>
+							<div class="swiper-lazy-preloader"></div>
+						</div>
+						<div class="swiper-slide">
+							<picture class="swiper-lazy">
+								<source media="(max-width: 1224px)" srcset="img/gallery/5.jpg" loading="lazy">
+								<source media="(min-width: 1224px)" srcset="img/gallery/1225px/5.jpg" loading="lazy">
+								<source media="(max-width: 415px)" srcset="img/gallery/415px/1.jpg" loading="lazy">
+								<img src="img/gallery/1225px/5.jpg" alt="Шлагбаум GS04, морской порт, Санкт-Петербург" loading="lazy">
+							</picture>
+							<label>Морской порт, Санкт-Петербург</label>
+							<div class="swiper-lazy-preloader"></div>
+						</div>
+						<div class="swiper-slide">
+							<picture class="swiper-lazy">
+								<source media="(max-width: 1224px)" srcset="img/gallery/6.jpg" loading="lazy">
+								<source media="(min-width: 1224px)" srcset="img/gallery/1225px/6.jpg" loading="lazy">
+								<source media="(max-width: 415px)" srcset="img/gallery/415px/1.jpg" loading="lazy">
+								<img src="img/gallery/1225px/6.jpg" alt="Шлагбаум GS04, Сокольнический Вал, Москва" loading="lazy">
+							</picture>
+							<label>Сокольнический Вал, Москва</label>
+							<div class="swiper-lazy-preloader"></div>
+						</div>
+						<div class="swiper-slide">
+							<picture class="swiper-lazy">
+								<source media="(max-width: 1224px)" srcset="img/gallery/7.jpg" loading="lazy">
+								<source media="(min-width: 1224px)" srcset="img/gallery/1225px/7.jpg" loading="lazy">
+								<source media="(max-width: 415px)" srcset="img/gallery/415px/1.jpg" loading="lazy">
+								<img src="img/gallery/1225px/7.jpg" alt="Шлагбаум GS04, парковка, Санкт-Петербург" loading="lazy">
+							</picture>
+							<label>Парковка, Санкт-Петербург</label>
+							<div class="swiper-lazy-preloader"></div>
+						</div>
+						<div class="swiper-slide">
+							<picture class="swiper-lazy">
+								<source media="(max-width: 1224px)" srcset="img/gallery/8.jpg" loading="lazy">
+								<source media="(min-width: 1224px)" srcset="img/gallery/1225px/8.jpg" loading="lazy">
+								<source media="(max-width: 415px)" srcset="img/gallery/415px/1.jpg" loading="lazy">
+								<img src="img/gallery/1225px/8.jpg" alt="Шлагбаум GS04, морской порт, Санкт-Петербург" loading="lazy">
+							</picture>
+							<label>Морской порт, Санкт-Петербург</label>
+							<div class="swiper-lazy-preloader"></div>
+						</div>
 					</div>  
 					<div class="swiper-button-prev"></div>
 					<div class="swiper-button-next"></div> 
@@ -568,7 +640,7 @@ include 'db/prices.php';
 			<section class="set-block">
 				<h2 class="set-block__title container">Комплект</h2>
 				<div class="set-block__photos container">
-					<div class="set-block__photos-inner">
+					<div class="set-block__photos-inner"> 
 						<div class="set-block-photo">
 							<div class="set-block-photo__photo">
 								<img class="set-block-photo__img" src="img/housing-set.png" alt="Тумба шлагбаума" title="Тумба шлагбаума" loading="lazy">
@@ -737,10 +809,26 @@ include 'db/prices.php';
 			<section class="optional-block">
 				<h2 class="optional-block__title container">Дополнительное оборудование</h2>
 				<div class="optional-block__photos container">
-					<div class="optional-block__photos-inner"> 
+					<div class="optional-block__photos-inner">  
 						<div class="optional-block-photo">
 							<div class="optional-block-photo__photo">
-								<img class="optional-block-photo__img" src="img/code-modul.png" alt="Модуль GSM/BLE для управления шлагбаумом " title="Кодовая панель" loading="lazy">
+								<img class="optional-block-photo__img" src="img/code-GBF1.png" alt="Шарнир для складной стрелы" title="Шарнир для складной стрелы" loading="lazy">
+							</div>
+							<div class="optional-block-photo__text optional-block-photo__text_title">
+								Шарнир для складной стрелы
+							</div>
+							<div class="optional-block-photo__description" data-state="closed">
+								<button class="optional-block-photo__description-close" aria-label="Закрыть">
+									<img class="optional-block-photo__description-close-img" src="img/close-grey.svg" alt="Закрыть" loading="lazy">
+								</button>
+								<h3 class="optional-block-photo__description-title">Шарнир для складной стрелы</h3>
+								<p class="optional-block-photo__description-paragraph">Шарнир для складной стрелы PERCo-GBF1 предназначен для установки шлагбаума в помещениях с ограничением по высоте. </p>
+								<p class="optional-block-photo__description-paragraph">Высота шлагбаума со складной стрелой варьируется от 1900 до 2500мм. </p>
+							</div>
+						</div>
+						<div class="optional-block-photo">
+							<div class="optional-block-photo__photo">
+								<img class="optional-block-photo__img" src="img/code-modul.png" alt="Модуль GSM/BLE для управления шлагбаумом " title="" loading="lazy">
 							</div>
 							<div class="optional-block-photo__text optional-block-photo__text_title">
 								Модуль GSM/BLE для управления шлагбаумом
@@ -812,10 +900,10 @@ include 'db/prices.php';
 						</div>
 						<div class="optional-block-photo">
 							<div class="optional-block-photo__photo">
-								<img class="optional-block-photo__img" src="img/gcr1.png" alt="Устройство радиоуправления GCR1" title="Устройство радиоуправления" loading="lazy">
+								<img class="optional-block-photo__img" src="img/gcr1.png" alt="Устройство радиоуправления двухканальное" title="Устройство радиоуправления" loading="lazy">
 							</div>
 							<div class="optional-block-photo__text optional-block-photo__text_title">
-								Устройство радиоуправления GCR1
+								Устройство радиоуправления двухканальное
 							</div>
 							<div class="optional-block-photo__text optional-block-photo__text_price">
 								Цена <span class="optional-block-photo__price-value">15 866 ₽</span> со склада в Москве и Санкт&#8209;Петербурге
@@ -827,7 +915,7 @@ include 'db/prices.php';
 								<button class="optional-block-photo__description-close" aria-label="Закрыть">
 									<img class="optional-block-photo__description-close-img" src="img/close-grey.svg" alt="Закрыть" loading="lazy">
 								</button>
-								<h3 class="optional-block-photo__description-title">Устройство радиоуправления GCR1</h3>
+								<h3 class="optional-block-photo__description-title">Устройство радиоуправления двухканальное</h3>
 								<p class="optional-block-photo__description-paragraph">Двухканальное устройство радиоуправления шлагбаумом.</p>
 								<ul class="optional-block-photo__description-list">
 									<li class="optional-block-photo__description-list-li">Напряжение питания –12-30 VDC</li>
@@ -842,10 +930,10 @@ include 'db/prices.php';
 						</div>
 						<div class="optional-block-photo">
 							<div class="optional-block-photo__photo">
-								<img class="optional-block-photo__img" src="img/trinket-set.png" alt="Брелок GCR2" title="Брелок для шлагбаума" loading="lazy">
+								<img class="optional-block-photo__img" src="img/trinket-set.png" alt="Брелок радиоуправления" title="Брелок для шлагбаума" loading="lazy">
 							</div>
 							<div class="optional-block-photo__text optional-block-photo__text_title">
-								Брелок GCR2
+								Брелок радиоуправления
 							</div>
 							<div class="optional-block-photo__text optional-block-photo__text_price">
 								Цена <span class="optional-block-photo__price-value">15 866 ₽</span> со склада в Москве и Санкт&#8209;Петербурге
@@ -857,7 +945,7 @@ include 'db/prices.php';
 								<button class="optional-block-photo__description-close" aria-label="Закрыть">
 									<img class="optional-block-photo__description-close-img" src="img/close-grey.svg" alt="Закрыть" loading="lazy">
 								</button>
-								<h3 class="optional-block-photo__description-title">Брелок GCR2</h3>
+								<h3 class="optional-block-photo__description-title">Брелок радиоуправления</h3>
 								<ul class="optional-block-photo__description-list">
 									<li class="optional-block-photo__description-list-li">Дальность действия – до 50 метров</li>
 									<li class="optional-block-photo__description-list-li">Элементы питания – 2 х CR2016</li>
@@ -1149,7 +1237,7 @@ include 'db/prices.php';
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
 							"contentUrl": "https://barrier.perco.ru/img/gcr1.png",
-							"name": "Устройство радиоуправления GCR1",
+							"name": "Устройство радиоуправления двухканальное",
 							"description": "Двухканальное устройство радиоуправления шлагбаумом.",
 							"datePublished": "2020-11-02",
 							"dateModified": "2020-12-03"
@@ -1160,7 +1248,7 @@ include 'db/prices.php';
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
 							"contentUrl": "https://barrier.perco.ru/img/trinket-set.png",
-							"name": "Брелок GCR2",
+							"name": "Брелок радиоуправления",
 							"description": "Дальность действия – до 50 метров. Элементы питания – 2 х CR2016. Габаритные размеры – 44х30х12 мм.",
 							"datePublished": "2020-11-02",
 							"dateModified": "2020-12-03"
@@ -1514,7 +1602,7 @@ include 'db/prices.php';
 					<a class="file" href="download/GS04_ApplicGuide.pdf" target="_blank">
 						<img class="file__icon" src="img/pdf.svg" alt="pdf" loading="lazy" draggable="false">
 						<h3 class="file__title">Шлагбаум PERCo-GS04. <br class="file__br">Руководство по эксплуатации</h3>
-						<div class="file__description">(4.55 MB) &mdash; 24.08.2021</div>
+						<div class="file__description">(4.01 MB) &mdash; 27.12.2021</div>
 					</a>
 					<a class="file" href="download/GS04_TechSpec.pdf" target="_blank">
 						<img class="file__icon" src="img/pdf.svg" alt="pdf" loading="lazy" draggable="false">
@@ -1565,6 +1653,11 @@ include 'db/prices.php';
 						<img class="file__icon" src="img/pdf.svg" alt="pdf" loading="lazy" draggable="false">
 						<h3 class="file__title">Шаблон для наклейки светоотражающих элементов на стрелу GBO4.3</h3>
 						<div class="file__description">(299 kB) &mdash; 24.08.2021</div>
+					</a>  
+					<a class="file" href="download/GBF1_ApplicGuide.pdf" target="_blank">
+						<img class="file__icon" src="img/pdf.svg" alt="pdf" loading="lazy" draggable="false">
+						<h3 class="file__title">Шарнир для складной стрелы шлагбаума PERCo-GBF1. Инструкция по монтажу</h3>
+						<div class="file__description">(1.57 MB)  &mdash; 22.09.2021</div>
 					</a>  
 		
 					<script type="application/ld+json">
