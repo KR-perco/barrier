@@ -53,6 +53,8 @@ if ($_POST['form'] == 'feedback') {
 		exit;
 	}
 }*/
+$info_years = date("Y") - 1988;
+$info_countries = 92;
 
 $modifiedTimeUnix = 1612950788;
 $modifiedTime = gmdate("D, d M Y H:i:s \G\M\T", $modifiedTimeUnix);
@@ -1887,18 +1889,22 @@ include 'db/prices.php';
 				<div class="about-block__icons container">
 					<div class="about-icon">
 						<div class="about-icon__icon">
-							<img class="about-icon__img about-icon__img_experience" src="img/about-experience.svg" alt="30-летний опыт работы" loading="lazy" draggable="false">
+							<!-- <img class="about-icon__img about-icon__img_experience" src="img/about-experience.svg" alt="30-летний опыт работы" loading="lazy" draggable="false"> -->
+							<span class="new-about-icon_exp"><?=$info_years?></span>
+							<img class="about-icon__img about-icon__img_experience" src="img/years.svg" alt="<?=$info_years?>-летний опыт работы" loading="lazy" draggable="false">
 						</div>
 						<div class="about-icon__text">
-							30-летний опыт работы
+							<?=$info_years?>-летний опыт работы
 						</div>
 					</div>
 					<div class="about-icon">
 						<div class="about-icon__icon">
-							<img class="about-icon__img about-icon__img_countries" src="img/about-countries-number.svg" alt="Продажи в 90 странах мира" loading="lazy" draggable="false">
+							<!-- <img class="about-icon__img about-icon__img_countries" src="img/about-countries-number.svg" alt="Продажи в 90 странах мира" loading="lazy" draggable="false"> -->
+							<span class="new-about-icon_count"><?=$info_countries?> </span>
+							<img class="about-icon__img about-icon__img_countries" src="img/countries.svg" alt="Продажи в <?=$info_countries?> странах мира" loading="lazy" draggable="false">
 						</div>
 						<div class="about-icon__text">
-							Продажи в 90 странах мира
+							Продажи в <?=$info_countries?> странах мира
 						</div>
 					</div>
 					<div class="about-icon">
@@ -1911,10 +1917,10 @@ include 'db/prices.php';
 					</div>
 					<div class="about-icon">
 						<div class="about-icon__icon">
-							<img class="about-icon__img about-icon__img_dealers" src="img/about-dealer-network.svg" alt="Диллерская сеть" loading="lazy" draggable="false">
+							<img class="about-icon__img about-icon__img_dealers" src="img/about-dealer-network.svg" alt="Дилерская сеть" loading="lazy" draggable="false">
 						</div>
 						<div class="about-icon__text">
-							Разветвленная диллерская сеть, сервисные центры во всех регионах
+							Разветвленная дилерская сеть, сервисные центры во всех регионах
 						</div>
 					</div>
 					<div class="about-icon">

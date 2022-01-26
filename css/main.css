@@ -1482,6 +1482,7 @@ body {
     margin-inline-end: 16px;
     block-size: 76px;
     inline-size: 78px;
+    position: relative;
 }
 
 .about-icon__img_experience {
@@ -1928,6 +1929,32 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.new-about-icon_exp {
+    display: flex;
+    color: #4885fa;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    top: 4px;
+    font-size: 32px;
+}
+
+.new-about-icon_count {
+    display: flex;
+    color: #4885fa;
+    position: absolute;
+    width: 55px;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-weight: bold;
+    top: 0;
+    font-size: 32px;
 }
 
 
@@ -2955,6 +2982,15 @@ body {
 }
 
 @media (min-width: 1200px) {
+    .new-about-icon_exp {
+        top: 7px;
+        font-size: 48px;
+    }
+    .new-about-icon_count {
+        top: 4px;
+        font-size: 45px;
+        width: 75px;
+    }
     .container {
         inline-size: 1140px;
     }
