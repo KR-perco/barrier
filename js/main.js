@@ -1,11 +1,79 @@
 'use strict';
 (() => {
 
+    function setCookie(name, value, exdays) {
+        var exdate = new Date();
+        exdate.setDate(exdate.getDate() + exdays);
+        var curCookie = name + "=" + escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
+        document.cookie = curCookie;
+    }
+
+    var isCookie = getCookie("firstVisit");
+
+    function getCookie(name) {
+        var matches = document.cookie.match(new RegExp(
+            "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        ));
+        return matches ? decodeURIComponent(matches[1]) : undefined;
+    }
+
+    function setCookie(name, value, options) {
+        options = options || {};
+
+        var expires = options.expires;
+
+        if (typeof expires == "number" && expires) {
+            var d = new Date();
+            d.setTime(d.getTime() + expires * 1000);
+            expires = options.expires = d;
+        }
+        if (expires && expires.toUTCString) {
+            options.expires = expires.toUTCString();
+        }
+
+        value = encodeURIComponent(value);
+
+        var updatedCookie = name + "=" + value;
+
+        for (var propName in options) {
+            updatedCookie += "; " + propName;
+            var propValue = options[propName];
+            if (propValue !== true) {
+                updatedCookie += "=" + propValue;
+            }
+        }
+
+        document.cookie = updatedCookie;
+    }
+
+
 
     let ArrowsAnimationInited = false;
     window.scrollToElement = null;
 
     window.addEventListener('load', () => {
+
+        console.log(location.hostname);
+        // console.log(document.getElementById('cookie-warning-ru'));
+        // console.log(isCookie);
+
+        if (location.hostname == "barrier.perco.ru") {
+            if (isCookie == undefined) {
+                document.getElementById('cookie-warning-ru').style.display = "block";
+                setCookie("firstVisit", "", {
+                    expires: 86400 * 365
+                })
+            }
+        }
+        if (location.hostname == "www.perco.local(eng_version)") {
+            if (isCookie == undefined) {
+                document.getElementById('cookie-warning-en').style.display = "block";
+                setCookie("firstVisit", "", {
+                    expires: 86400 * 365
+                })
+            }
+        }
+
         (new IntersectionObserver(e => {
             if (!e[0].isIntersecting || ArrowsAnimationInited) return;
             ArrowsAnimationInited = true;

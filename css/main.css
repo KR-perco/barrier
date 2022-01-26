@@ -1957,6 +1957,66 @@ body {
     font-size: 32px;
 }
 
+.cookie-warning {
+    background-color: rgba(89, 96, 102, 0.7);
+    color: #FFFFFF;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.cookie-warning .block {
+    max-width: 1195px;
+    margin: 25px auto;
+    padding: 0 25px;
+    position: relative;
+    font-weight: 100;
+    line-height: 1.1em;
+}
+
+.cookie-warning .block .close {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.close .icon {
+    border-radius: 50%;
+    border: 1.3px solid #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+}
+
+.cookie-warning .block .close svg {
+    stroke: #ffffff;
+    width: 15px;
+    outline: none;
+}
+
+.cookie-warning .text {
+    text-align: justify;
+    font-size: 16px;
+    padding-right: 25px;
+}
+
+.
+/* .lang_ru #cookie-warning-ru {
+    display: flex;
+} */
+
 
 /* 
 .swiper-slide picture,

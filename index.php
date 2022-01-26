@@ -2099,6 +2099,31 @@ include 'db/prices.php';
 					Сообщение успешно отправлено
 				</div>
 			</div>
+			<div class="cookie-warning" id="cookie-warning-ru">
+				<div class="block">
+					<div class="text">
+						<p>OOO «ПЭРКо» использует файлы «cookie» с целью персонализации сервисов и повышения удобства пользования веб-сайтом. «Cookie» представляют собой небольшие файлы, содержащие информацию о предыдущих посещениях веб-сайта. Если вы не хотите использовать файлы «cookie», измените настройки браузера.</p>
+					</div>
+					<div class="close" onclick="this.parentNode.parentNode.style.display = 'none'">
+						<span class="icon">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" tabindex="-1"><path d="M20 20L4 4m16 0L4 20"></path></svg>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="cookie-warning" id="cookie-warning-en">
+				<div class="block">
+					<div class="text">
+						<p>«PERCo» uses «cookie» files to personalize the services and to increase website usability. «Cookies» are little text files containing information about previous website visits.</p>
+						<p>If you don't want to use «cookie» files, please change browser settings. </p>
+					</div>
+					<div class="close" onclick="this.parentNode.parentNode.style.display = 'none'">
+						<span class="icon">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" tabindex="-1"><path d="M20 20L4 4m16 0L4 20"></path></svg>
+						</span>
+					</div>
+				</div>
+			</div>
 		</main>
 	</body>
 </html>
