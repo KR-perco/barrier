@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Host: https://barrier.perco.ru
-Sitemap: https://barrier.perco.ru/sitemap.xml
+Host: http://barrier.perco.ru
+Sitemap: http://barrier.perco.ru/sitemap.xml

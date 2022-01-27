@@ -485,7 +485,7 @@
     });
 
     const initAnimation = () => {
-        document.querySelectorAll('.logo, .main-btn_home').forEach(elem => {
+        document.querySelectorAll('.logo, .main-btn_home, .main-btn_lang').forEach(elem => {
             elem.style.opacity = 1;
         });
         document.querySelector('.logo').addEventListener('transitionend', () => {
@@ -514,6 +514,7 @@
                 document.querySelector('.main-btn_boom_barrier').style.transform = 'scale(1)';
                 setTimeout(() => {
                     document.querySelector('.main-btn_menu').style.transform = 'scale(1)';
+                    document.querySelector('.main-btn_lang').style.transform = 'scale(1)';
                 }, 100);
             });
         });
@@ -1450,8 +1451,8 @@
             return;
         }
         gtag('event', 'feedback_form_filled');
-        yaCounter68864038.reachGoal('feedback_form_filled');
-        console.log(yaCounter68864038);
+        // yaCounter68864038.reachGoal('feedback_form_filled');
+        // console.log(yaCounter68864038);
         if (document.querySelector('.popup').dataset.animation == 'animating') return;
         document.querySelector('.popup').dataset.animation = 'animating';
         document.querySelector('.popup').style.display = 'flex';
@@ -1752,4 +1753,87 @@
             }
         });
     };
+
+    var swiper = new Swiper(".gallery-new", {
+        effect: "fade",
+        loop: true,
+        speed: 1300,
+        fadeEffect: {
+            crossFade: false
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: '.gallery-new .swiper-button-next',
+            prevEl: '.gallery-new .swiper-button-prev',
+        },
+        preloadImages: false,
+        lazy: {
+            loadPrevNext: true,
+        },
+    });
+
+
+
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+
+    function checkCookie() {
+        // try and find the cookie or return empty string
+        var languageSet = getCookie("setLanguage");
+        // if languageSet is not the empty string then the cookie did exist 
+        if (languageSet != "") {
+            console.log("found the cookie " + languageSet);
+            return languageSet;
+        } else {
+            // otherwise set the cookie to the default value 
+            setCookie("setLanguage", "default cookie value here", 1);
+        }
+    }
+
+    document.getElementById("en_lang").addEventListener("click", e => {
+        e.preventDefault;
+        var currLang = "en";
+        setCookie("setLanguage", "en", "1");
+        console.log(currLang);
+        console.log(checkCookie());
+        if (currLang != "en") {
+            document.location.reload();
+        }
+    });
+    document.getElementById("ru_lang").addEventListener("click", e => {
+        e.preventDefault;
+        var currLang = "ru";
+        setCookie("setLanguage", "ru", 1);
+        console.log(currLang);
+        console.log(checkCookie());
+        if (currLang != "ru") {
+            document.location.reload();
+        }
+    });
+
+
+
 })();

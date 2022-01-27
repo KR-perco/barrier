@@ -1,10 +1,9 @@
-<?php
+﻿<?php
 
 include 'secret.php';
 
-console_log("git integreted"); 
-
 if ($_POST['form'] == 'feedback') {
+	console_log($request); 
 	if($request = curl_init()) {
 		curl_setopt($request, CURLOPT_URL, 'https://www.google.com/recaptcha/api/siteverify');
 		curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
@@ -19,8 +18,12 @@ if ($_POST['form'] == 'feedback') {
 		}
 		$headers = 'Content-type: text/html; charset=utf-8 \r\nFrom: ' . htmlspecialchars($_POST['email']);
 		$message = 'Дата заполнения: ' . date('d-m-Y H:i:s') . '<br>IP пользователя: '. $_SERVER['REMOTE_ADDR'] . '<br>________________________________<br><br>Имя пользователя:<br>' . $_POST['name'] . '<br><br>E-mail:<br>' . htmlspecialchars($_POST['email']) . '<br><br>Номер телефона:<br>' . htmlspecialchars($_POST['number']) . '<br><br>Сообщение:<br>' . htmlspecialchars($_POST['message']) . '<br><br>' . '________________________________<br>Письмо сгенерировано автоматически.';
-		mail('gerasimov@perco.ru', 'Заполнена форма обратной связи на сайте barrier.perco.ru', $message, $headers);
-		mail('romanova@perco.ru', 'Заполнена форма обратной связи на сайте barrier.perco.ru', $message, $headers);
+		
+		console_log($request); 
+		console_log($headers); 
+		
+		// mail('gerasimov@perco.ru', 'Заполнена форма обратной связи на сайте barrier.perco.ru', $message, $headers);
+		// mail('romanova@perco.ru', 'Заполнена форма обратной связи на сайте barrier.perco.ru', $message, $headers);
 		// mail('klimov@perco.ru', 'Заполнена форма обратной связи на сайте barrier.perco.ru', $message, $headers);
 		$params = array(
 			'pw' => $secretpw,
@@ -89,20 +92,20 @@ include 'db/prices.php';
 		<meta property="og:title" content="Автоматический шлагбаум PERCo GS04">
 		<meta property="og:site_name" content="Автоматический шлагбаум PERCo GS04">
 		<meta property="og:description" content="Управление шлагбаумом от СКУД, по звонку или через мобильное приложение. Встроенная система обогрева механизма управления шлагбаума. Двигатель с планетарным редуктором. Защита механизма шлагбаума при наезде. Круглая, прямоугольная и складная стрелы. Гарантия на шлагбаум- 5 лет.">
-		<meta property="og:url" content="https://barrier.perco.ru">
+		<meta property="og:url" content="https://barrier.perco.local">
 		<meta property="og:type" content="website">
-		<meta property="og:image" content="https://barrier.perco.ru/img/preview.jpg">
+		<meta property="og:image" content="https://barrier.perco.local/img/preview.jpg">
 		<meta property="og:image:width" content="1920">
 		<meta property="og:image:height" content="1080">
 		<link href="css/main.css" rel="stylesheet">
 		<link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon">
-		<link href="https://barrier.perco.ru" rel="canonical">
+		<link href="https://barrier.perco.local" rel="canonical">
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
 				"@type": "Organization",
-				"url": "https://barrier.perco.ru",
-				"logo": "https://barrier.perco.ru/img/logo.svg"
+				"url": "https://barrier.perco.local",
+				"logo": "https://barrier.perco.local/img/logo.svg"
 			}
 		</script>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -344,12 +347,12 @@ include 'db/prices.php';
 							"name": "PERCo",
 							"logo": {
 								"@type": "ImageObject",
-								"url": "https://barrier.perco.ru/img/logo.svg"
+								"url": "https://barrier.perco.local/img/logo.svg"
 							}
 						},
 						"offers": {
 							"@type": "Offer",
-							"url": "https://barrier.perco.ru/",
+							"url": "https://barrier.perco.local/",
 							"priceCurrency": "EUR",
 							"price": "905",
 							"availability": "https://schema.org/InStock"
@@ -370,12 +373,12 @@ include 'db/prices.php';
 							"name": "PERCo",
 							"logo": {
 								"@type": "ImageObject",
-								"url": "https://barrier.perco.ru/img/logo.svg"
+								"url": "https://barrier.perco.local/img/logo.svg"
 							}
 						},
 						"offers": {
 							"@type": "Offer",
-							"url": "https://barrier.perco.ru/",
+							"url": "https://barrier.perco.local/",
 							"priceCurrency": "EUR",
 							"price": "920",
 							"availability": "https://schema.org/InStock"
@@ -396,12 +399,12 @@ include 'db/prices.php';
 							"name": "PERCo",
 							"logo": {
 								"@type": "ImageObject",
-								"url": "https://barrier.perco.ru/img/logo.svg"
+								"url": "https://barrier.perco.local/img/logo.svg"
 							}
 						},
 						"offers": {
 							"@type": "Offer",
-							"url": "https://barrier.perco.ru/",
+							"url": "https://barrier.perco.local/",
 							"priceCurrency": "EUR",
 							"price": "886",
 							"availability": "https://schema.org/InStock"
@@ -422,12 +425,12 @@ include 'db/prices.php';
 							"name": "PERCo",
 							"logo": {
 								"@type": "ImageObject",
-								"url": "https://barrier.perco.ru/img/logo.svg"
+								"url": "https://barrier.perco.local/img/logo.svg"
 							}
 						},
 						"offers": {
 							"@type": "Offer",
-							"url": "https://barrier.perco.ru/",
+							"url": "https://barrier.perco.local/",
 							"priceCurrency": "EUR",
 							"price": "874",
 							"availability": "https://schema.org/InStock"
@@ -630,7 +633,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/housing-set.png",
+							"contentUrl": "https://barrier.perco.local/img/housing-set.png",
 							"name": "Тумба шлагбаума",
 							"description": "Тумба шлагбаума",
 							"datePublished": "2020-11-02"
@@ -640,7 +643,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/control-board-set.png",
+							"contentUrl": "https://barrier.perco.local/img/control-board-set.png",
 							"name": "Встроенный блок управления",
 							"description": "Встроенный блок управления",
 							"datePublished": "2020-11-19"
@@ -650,7 +653,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/heating-mechanism-set.png",
+							"contentUrl": "https://barrier.perco.local/img/heating-mechanism-set.png",
 							"name": "Встроенная система обогрева",
 							"description": "Встроенная система обогрева",
 							"datePublished": "2020-11-19"
@@ -660,7 +663,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/photocell-set.png",
+							"contentUrl": "https://barrier.perco.local/img/photocell-set.png",
 							"name": "Встроенный фотоэлемент",
 							"description": "Встроенный фотоэлемент",
 							"datePublished": "2020-11-19"
@@ -670,7 +673,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/light-set.png",
+							"contentUrl": "https://barrier.perco.local/img/light-set.png",
 							"name": "Встроенная сигнальная индикация",
 							"description": "Встроенная сигнальная индикация",
 							"datePublished": "2020-11-19"
@@ -680,7 +683,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/arrow-square-set.png",
+							"contentUrl": "https://barrier.perco.local/img/arrow-square-set.png",
 							"name": "Стрела прямоугольного или круглого сечения",
 							"description": "Стрела прямоугольного или круглого сечения с системой крепления к тумбе",
 							"datePublished": "2020-11-02"
@@ -690,7 +693,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/reflective-stickers-set.png",
+							"contentUrl": "https://barrier.perco.local/img/reflective-stickers-set.png",
 							"name": "Набор светоотражающих наклеек",
 							"description": "Набор светоотражающих наклеек для стрелы",
 							"datePublished": "2020-11-02"
@@ -700,7 +703,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/buffer-pad-set.png",
+							"contentUrl": "https://barrier.perco.local/img/buffer-pad-set.png",
 							"name": "Буферные накладки",
 							"description": "Буферные накладки для стрелы прямоугольного сечения",
 							"datePublished": "2020-11-02"
@@ -710,7 +713,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/channel-bars-set.png",
+							"contentUrl": "https://barrier.perco.local/img/channel-bars-set.png",
 							"name": "Монтажные швеллеры",
 							"description": "Монтажные швеллеры для установки шлагбаума на отверстия от предыдущего шлагбаума",
 							"datePublished": "2020-11-02"
@@ -1110,7 +1113,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/gbs1.png",
+							"contentUrl": "https://barrier.perco.local/img/gbs1.png",
 							"name": "Опорная стойка стрелы шлагбаума GBS1",
 							"description": "Опорная стойка с ловителем для стрелы. Рекомендуется применять для стрелы длиной более 3 метров, также на ней возможна установка передатчика фотоэлемента безопасности.",
 							"datePublished": "2020-11-02",
@@ -1121,7 +1124,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/gds1.png",
+							"contentUrl": "https://barrier.perco.local/img/gds1.png",
 							"name": "Стойка для фотоэлемента безопасности GDS1",
 							"description": "На стойке может монтироваться как передатчик фотоэлемента безопасности, встроенного в шлагбаум, так и приемники и передатчики дополнительных фотоэлементов безопасности или датчики контроля проезда.",
 							"datePublished": "2020-11-02",
@@ -1132,7 +1135,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/gcr1.png",
+							"contentUrl": "https://barrier.perco.local/img/gcr1.png",
 							"name": "Устройство радиоуправления GCR1",
 							"description": "Двухканальное устройство радиоуправления шлагбаумом.",
 							"datePublished": "2020-11-02",
@@ -1143,7 +1146,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/trinket-set.png",
+							"contentUrl": "https://barrier.perco.local/img/trinket-set.png",
 							"name": "Брелок GCR2",
 							"description": "Дальность действия – до 50 метров. Элементы питания – 2 х CR2016. Габаритные размеры – 44х30х12 мм.",
 							"datePublished": "2020-11-02",
@@ -1154,7 +1157,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/gm1.png",
+							"contentUrl": "https://barrier.perco.local/img/gm1.png",
 							"name": "Монтажная пластина GM1",
 							"description": "Монтажная пластина применяется при установке шлагбаума на непрочные основания (грунты). Устанавливается в заранее подготовленный проем в земле, укрепляется арматурой и заливается бетоном.",
 							"datePublished": "2020-11-02",
@@ -1166,7 +1169,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/perco-h6-4.png",
+							"contentUrl": "https://barrier.perco.local/img/perco-h6-4.png",
 							"name": "Пульт дистанционного управления PERCo-H6/4",
 							"description": "Габаритные размеры – 120х80х28 мм. Длина кабеля – 6,6 м.",
 							"datePublished": "2020-11-02",
@@ -1177,7 +1180,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/is-1-24.png",
+							"contentUrl": "https://barrier.perco.local/img/is-1-24.png",
 							"name": "Светофор ИС-1/24",
 							"description": "Двухсекционный. Напряжение питания –24V AC/DC. Потребляемая мощность – не более 15 Вт. Габаритные размеры – 170х350х28 мм. Диаметр излучателя – 145 мм. Класс защиты – IP65.",
 							"datePublished": "2020-11-02",
@@ -1188,7 +1191,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/gd1.png",
+							"contentUrl": "https://barrier.perco.local/img/gd1.png",
 							"name": "Дополнительный Фотоэлемент GD1",
 							"description": "Шлагбаум имеет в своем составе фотоэлемент для защиты от удара стрелой (встроенный приемник – выносной передатчик). Также можно приобрести дополнительный фотоэлемент (приемник-передатчик) GD1 для использования в качестве детектора ТС.",
 							"datePublished": "2020-11-02",
@@ -1199,7 +1202,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/m1h.png",
+							"contentUrl": "https://barrier.perco.local/img/m1h.png",
 							"name": "Датчик индукционной петли M1H",
 							"description": "Одноканальный датчик индукционной петли. К датчику подключается индукционная петля, заранее уложенная и смонтированная в соответствии с проектом пункта контроля автотранспорта (парковки). Используется в качестве детектора ТС.",
 							"datePublished": "2020-11-02",
@@ -1210,7 +1213,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/led-strip-light.png",
+							"contentUrl": "https://barrier.perco.local/img/led-strip-light.png",
 							"name": "Светодиодная лента для дополнительной подсветки стрелы шлагбаума",
 							"description": "Используется для подсветки стрелы прямоугольного сечения.",
 							"datePublished": "2020-11-02",
@@ -1221,7 +1224,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/fencing.png",
+							"contentUrl": "https://barrier.perco.local/img/fencing.png",
 							"name": "Ограждение для стойки шлагбаума GM3",
 							"description": "Для защиты шлагбаума от случайного наезда. Изготовлено из стальной трубы Ø57 мм. Габаритные размеры (ШхГхВ) – 497х504х470 мм.",
 							"datePublished": "2020-11-02",
@@ -1232,7 +1235,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/reader-stand.png",
+							"contentUrl": "https://barrier.perco.local/img/reader-stand.png",
 							"name": "Стойка для считывателя GM4",
 							"description": "Для установки RFID-считывателя или кодонаборной панели.",
 							"datePublished": "2020-11-02",
@@ -1243,7 +1246,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/code-panel.png",
+							"contentUrl": "https://barrier.perco.local/img/code-panel.png",
 							"name": "Кодовая панель Tantos TS-KBD-EM2 Metal",
 							"description": "Напряжение питания – 12VDC. Ток потребления – не более 80 мА. Встроенный считыватель карт доступа (EMM). Память – до 1000 карт/кодов. Металлический корпус. Класс защиты – IP66. Два индикатора статуса, звуковая индикация. Импульсный и триггерный режимы работы реле замка. Диапазон рабочих температур – -40℃~＋60℃. Габаритные размеры – 130х56х23 мм",
 							"datePublished": "2020-11-02",
@@ -1465,7 +1468,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/gs04-schema.svg",
+							"contentUrl": "https://barrier.perco.local/img/gs04-schema.svg",
 							"name": "Габаритный чертёж",
 							"description": "Габаритный чертёж",
 							"datePublished": "2020-11-02"
@@ -1475,7 +1478,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/gs04-description.png",
+							"contentUrl": "https://barrier.perco.local/img/gs04-description.png",
 							"name": "Шлагбаум с укороченной стрелой",
 							"description": "Стрела может быть укорочена до 2,5 метров",
 							"datePublished": "2020-11-02"
@@ -1532,7 +1535,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "DataDownload",
-							"contentUrl": "https://barrier.perco.ru/download/GS04_ApplicGuide.pdf",
+							"contentUrl": "https://barrier.perco.local/download/GS04_ApplicGuide.pdf",
 							"name": "GS04_ApplicGuide.pdf",
 							"description": "Шлагбаум PERCo-GS04. Руководство по эксплуатации",
 							"encodingFormat": "application/pdf"
@@ -1542,7 +1545,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "DataDownload",
-							"contentUrl": "https://barrier.perco.ru/download/GS04_TechSpec.pdf",
+							"contentUrl": "https://barrier.perco.local/download/GS04_TechSpec.pdf",
 							"name": "GS04_TechSpec.pdf",
 							"description": "Шлагбаум PERCo-GS04. Краткое техническое описание",
 							"encodingFormat": "application/pdf"
@@ -1552,7 +1555,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "DataDownload",
-							"contentUrl": "https://barrier.perco.ru/download/AutoCAD.WMD-06-connection_dwg.zip",
+							"contentUrl": "https://barrier.perco.local/download/AutoCAD.WMD-06-connection_dwg.zip",
 							"name": "AutoCAD.WMD-06-connection_dwg.zip",
 							"description": "Схема подключения GS04 (AutoCAD)",
 							"encodingFormat": "application/zip"
@@ -1562,7 +1565,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "DataDownload",
-							"contentUrl": "https://barrier.perco.ru/download/GS04_Declaration.pdf",
+							"contentUrl": "https://barrier.perco.local/download/GS04_Declaration.pdf",
 							"name": "GS04_Declaration.pdf",
 							"description": "Декларация о соответствии на шлагбаум GS04",
 							"encodingFormat": "application/pdf"
@@ -1572,7 +1575,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "DataDownload",
-							"contentUrl": "https://barrier.perco.ru/download/shlagbaum-buklet-a4.pdf",
+							"contentUrl": "https://barrier.perco.local/download/shlagbaum-buklet-a4.pdf",
 							"name": "GS04_ApplicGuide.pdf",
 							"description": "Шлагбаум Буклет А4",
 							"encodingFormat": "application/pdf"
@@ -1582,7 +1585,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "DataDownload",
-							"contentUrl": "https://barrier.perco.ru/download/GD1_ApplicGuide.pdf",
+							"contentUrl": "https://barrier.perco.local/download/GD1_ApplicGuide.pdf",
 							"name": "GD1_ApplicGuide.pdf",
 							"description": "Фотоэлемент PERCo-GD1. Инструкция",
 							"encodingFormat": "application/pdf"
@@ -1592,7 +1595,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "DataDownload",
-							"contentUrl": "https://barrier.perco.ru/download/GCR1_ApplicGuide.pdf",
+							"contentUrl": "https://barrier.perco.local/download/GCR1_ApplicGuide.pdf",
 							"name": "GCR1_ApplicGuide.pdf",
 							"description": "Двухканальное устройство радиоуправления PERCo-GCR1. Инструкция",
 							"encodingFormat": "application/pdf"
@@ -1607,7 +1610,7 @@ include 'db/prices.php';
 					{
 						"@context": "https://schema.org",
 						"@type": "ImageObject",
-						"contentUrl": "https://barrier.perco.ru/img/solution-head.jpg",
+						"contentUrl": "https://barrier.perco.local/img/solution-head.jpg",
 						"name": "Автотранспортная проходная",
 						"description": "Автотранспортная проходная оборудуется шлагбаумом, видеокамерами, контроллером шлагбаума и считывателями дальнего действия.",
 						"datePublished": "2020-11-02"
@@ -1650,15 +1653,15 @@ include 'db/prices.php';
 						"@type": "Article",
 						"name": "Автотранспортная проходная",
 						"headline": "Автотранспортная проходная",
-						"url": "https://barrier.perco.ru",
+						"url": "https://barrier.perco.local",
 						"mainEntityOfPage": {
 							"@type": "WebPage",
-							"@id": "https://barrier.perco.ru/"
+							"@id": "https://barrier.perco.local/"
 						},
 						"image": [
-							"https://barrier.perco.ru/img/saat-i801m.jpg",
-							"https://barrier.perco.ru/img/perco-face-identification.jpg",
-							"https://barrier.perco.ru/img/perco-reports.jpg"
+							"https://barrier.perco.local/img/saat-i801m.jpg",
+							"https://barrier.perco.local/img/perco-face-identification.jpg",
+							"https://barrier.perco.local/img/perco-reports.jpg"
 						],
 						"datePublished": "2020-11-02T10:00:00",
 						"dateModified": "2020-11-02T10:00:00",
@@ -1667,7 +1670,7 @@ include 'db/prices.php';
 							"name": "PERCo",
 							"logo": {
 								"@type": "ImageObject",
-								"url": "https://barrier.perco.ru/img/logo.svg"
+								"url": "https://barrier.perco.local/img/logo.svg"
 							}
 						},
 						"publisher": {
@@ -1675,7 +1678,7 @@ include 'db/prices.php';
 							"name": "PERCo",
 							"logo": {
 								"@type": "ImageObject",
-								"url": "https://barrier.perco.ru/img/logo.svg"
+								"url": "https://barrier.perco.local/img/logo.svg"
 							}
 						},
 						"articleBody": "Автотранспортная проходная оборудуется шлагбаумом, видеокамерами, контроллером шлагбаума и считывателями дальнего действия. Управление работой шлагбаума и учет проезда транспортных средств осуществляются с помощью специального программного обеспечения. Водитель предъявляет идентификатор считывателю, не покидая автомобиля. В качестве идентификатора могут использоваться карты доступа и RFID-метки. Также может использоваться система распознавания номеров автомобиля. Считыватель работает на расстоянии до нескольких метров. Для проезда грузовиков можно установить дополнительный считыватель на высоком кронштейне вровень с кабинами. Дополнительный считыватель будет дублировать работу основного считывателя. Для защиты от проезда по чужому пропуску применяется видеоидентификация. Сотрудник службы безопасности сравнивает внешность водителя с фотографией владельца пропуска из базы данных и при несовпадении запрещает доступ. Для предотвращения хищений создается шлюз из двух шлагбаумов. Перед первым проверяется правомочность проезда, перед вторым проводится досмотр автомобиля. Проезд автомобиля может быть комиссионирован пропуском водителя. В этом случае система фиксирует событие «Проезд» для автомобиля и событие «Проход» для водителя. В отчетах информация о проезде автомобиля будет дополнена данными водителя. Система формирует отчеты о проезде транспортных средств, позволяющие вести корректный учет количества въездов и времени пребывания на территории автомобилей сотрудников и посетителей. В отчетах указывается: время въезда и выезда, время нахождения автомобилей сотрудников и посетителей на территории, время нахождения служебных транспортных средств на территории и вне территории в заданный период времени, информация о ТС, находящихся на территории в текущий момент времени.",
@@ -1703,7 +1706,7 @@ include 'db/prices.php';
 					{
 						"@context": "https://schema.org",
 						"@type": "ImageObject",
-						"contentUrl": "https://barrier.perco.ru/img/saat-i801m.jpg",
+						"contentUrl": "https://barrier.perco.local/img/saat-i801m.jpg",
 						"name": "Считыватель дальнего действия SAAT-I801M",
 						"description": "Считыватель дальнего действия SAAT-I801M",
 						"datePublished": "2020-11-02"
@@ -1713,7 +1716,7 @@ include 'db/prices.php';
 					{
 						"@context": "https://schema.org",
 						"@type": "ImageObject",
-						"contentUrl": "https://barrier.perco.ru/img/perco-face-identification.jpg",
+						"contentUrl": "https://barrier.perco.local/img/perco-face-identification.jpg",
 						"name": "Консоль управления PERCo-S-20, идентификация по лицу",
 						"description": "Консоль управления PERCo-S-20, идентификация по лицу",
 						"datePublished": "2020-11-02"
@@ -1723,7 +1726,7 @@ include 'db/prices.php';
 					{
 						"@context": "https://schema.org",
 						"@type": "ImageObject",
-						"contentUrl": "https://barrier.perco.ru/img/perco-reports.jpg",
+						"contentUrl": "https://barrier.perco.local/img/perco-reports.jpg",
 						"name": "Консоль управления PERCo-S-20, отчёты",
 						"description": "Консоль управления PERCo-S-20, отчёты",
 						"datePublished": "2020-11-02"
@@ -1738,7 +1741,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/about-head.jpg",
+							"contentUrl": "https://barrier.perco.local/img/about-head.jpg",
 							"name": "Главный офис и завод компании PERCo",
 							"description": "Главный офис и завод компании PERCo",
 							"datePublished": "2020-11-02"
@@ -1846,7 +1849,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/cl15.jpg",
+							"contentUrl": "https://barrier.perco.local/img/cl15.jpg",
 							"name": "Биометрический считываетль CL15",
 							"description": "Биометрический считываетль CL15",
 							"datePublished": "2020-11-02"
@@ -1856,7 +1859,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/st01.jpg",
+							"contentUrl": "https://barrier.perco.local/img/st01.jpg",
 							"name": "Турникет ST-01",
 							"description": "Турникет ST-01",
 							"datePublished": "2020-11-02"
@@ -1866,7 +1869,7 @@ include 'db/prices.php';
 						{
 							"@context": "https://schema.org",
 							"@type": "ImageObject",
-							"contentUrl": "https://barrier.perco.ru/img/gs04.jpg",
+							"contentUrl": "https://barrier.perco.local/img/gs04.jpg",
 							"name": "Шлагбаум GS04",
 							"description": "Шлагбаум GS04",
 							"datePublished": "2020-11-02"
@@ -1936,7 +1939,7 @@ include 'db/prices.php';
 						<textarea class="feedback-form-label__input" name="message"></textarea>
 					</label>
 					<label class="feedback-form-label-checkbox"><input class="feedback-form-label-checkbox__input" type="checkbox" required> Я прочитал(а) <a href="" class="feedback-form-policy-link">политику конфиденциальности</a> и соглас(на)ен на обработку данных</label>
-					<div class="g-recaptcha" data-sitekey="6LeBYtYZAAAAAA2TyNHPwEnK9wdliX0l9d_RS93V"></div>
+					<!-- <div class="g-recaptcha" data-sitekey="6LeBYtYZAAAAAA2TyNHPwEnK9wdliX0l9d_RS93V"></div> -->
 					<button class="feedback-form-btn" aria-label="Отправить">
 						Отправить
 					</button>
